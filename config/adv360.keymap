@@ -75,6 +75,66 @@
 
             hold-trigger-key-positions = <8>;
         };
+
+        div_d: div_d {
+            compatible = "zmk,behavior-hold-tap";
+            label = "DIV_D";
+            #binding-cells = <2>;
+            tapping-term-ms = <200>;
+            bindings = <&div>, <&kp>;
+
+            hold-trigger-key-positions = <31>;
+        };
+
+        span_s: span_s {
+            compatible = "zmk,behavior-hold-tap";
+            label = "SPAN_S";
+            #binding-cells = <2>;
+            tapping-term-ms = <200>;
+            bindings = <&span>, <&kp>;
+
+            hold-trigger-key-positions = <30>;
+        };
+
+        p_p: p_p {
+            compatible = "zmk,behavior-hold-tap";
+            label = "P_P";
+            #binding-cells = <2>;
+            tapping-term-ms = <200>;
+            bindings = <&p>, <&kp>;
+
+            hold-trigger-key-positions = <26>;
+        };
+
+        button_b: button_b {
+            compatible = "zmk,behavior-hold-tap";
+            label = "BUTTON_B";
+            #binding-cells = <2>;
+            tapping-term-ms = <200>;
+            bindings = <&button>, <&kp>;
+
+            hold-trigger-key-positions = <53>;
+        };
+
+        section_s: section_s {
+            compatible = "zmk,behavior-hold-tap";
+            label = "SECTION_S";
+            #binding-cells = <2>;
+            tapping-term-ms = <200>;
+            bindings = <&section>, <&kp>;
+
+            hold-trigger-key-positions = <17>;
+        };
+
+        main_m: main_m {
+            compatible = "zmk,behavior-hold-tap";
+            label = "MAIN_M";
+            #binding-cells = <2>;
+            tapping-term-ms = <200>;
+            bindings = <&main>, <&kp>;
+
+            hold-trigger-key-positions = <63>;
+        };
     };
 
     macros {
@@ -119,6 +179,48 @@
             bindings = <&kp POUND &kp POUND &kp POUND &kp POUND &kp POUND &kp POUND &kp SPACE>;
             label = "H6";
         };
+
+        div: div {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp LT &kp D &kp I &kp V &kp GT &kp LT &kp FSLH &kp D &kp I &kp V &kp GT &kp LEFT_ARROW &kp LEFT_ARROW &kp LEFT_ARROW &kp LEFT_ARROW &kp LEFT_ARROW &kp LEFT_ARROW>;
+            label = "DIV";
+        };
+
+        span: span {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp LT &kp S &kp P &kp A &kp N &kp GT &kp LT &kp FSLH &kp S &kp P &kp A &kp N &kp GT &kp LEFT_ARROW &kp LEFT_ARROW &kp LEFT_ARROW &kp LEFT_ARROW &kp LEFT_ARROW &kp LEFT_ARROW &kp LEFT_ARROW>;
+            label = "SPAN";
+        };
+
+        p: p {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp LT &kp P &kp GT &kp LT &kp FSLH &kp P &kp GT &kp LEFT_ARROW &kp LEFT_ARROW &kp LEFT_ARROW &kp LEFT_ARROW>;
+            label = "P";
+        };
+
+        main: main {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp LT &kp M &kp A &kp I &kp N &kp GT &kp LT &kp FSLH &kp M &kp A &kp I &kp N &kp GT &kp LEFT_ARROW &kp LEFT_ARROW &kp LEFT_ARROW &kp LEFT_ARROW &kp LEFT_ARROW &kp LEFT_ARROW &kp LEFT_ARROW>;
+            label = "MAIN";
+        };
+
+        section: section {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp LT &kp S &kp E &kp C &kp T &kp I &kp O &kp N &kp GT &kp LT &kp FSLH &kp S &kp E &kp C &kp T &kp I &kp O &kp N &kp GT &kp LEFT_ARROW &kp LEFT_ARROW &kp LEFT_ARROW &kp LEFT_ARROW &kp LEFT_ARROW &kp LEFT_ARROW &kp LEFT_ARROW &kp LEFT_ARROW &kp LEFT_ARROW &kp LEFT_ARROW>;
+            label = "SECTION";
+        };
+
+        button: button {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp LT &kp B &kp U &kp T &kp T &kp O &kp N &kp GT &kp LT &kp FSLH &kp B &kp U &kp T &kp T &kp O &kp N &kp GT &kp LEFT_ARROW &kp LEFT_ARROW &kp LEFT_ARROW &kp LEFT_ARROW &kp LEFT_ARROW &kp LEFT_ARROW &kp LEFT_ARROW &kp LEFT_ARROW &kp LEFT_ARROW>;
+            label = "BUTTON";
+        };
     };
 
     keymap {
@@ -127,9 +229,9 @@
         default_layer {
             bindings = <
 &new_behavior1 0 EQUAL  &kp N1     &kp N2        &h3_3 0 NUMBER_3  &h4_4 0 NUMBER_4  &h5_5 0 NUMBER_5  &tog 1                                                                                                                 &mo 3       &h6_6 0 NUMBER_6  &kp N7        &kp N8          &kp N9            &kp N0             &kp MINUS
-&kp TAB                 &kp Q      &kp W         &kp E             &kp R             &kp T             &kp F21                                                                                                                &kp F22     &kp Y             &kp U         &kp I           &kp O             &kp P              &kp BACKSLASH
-&kp ESC                 &kp A      &kp S         &kp D             &kp F             &kp G             &className     &kp LEFT_COMMAND  &kp LALT          &kp LGUI   &kp RIGHT_COMMAND  &kp RIGHT_COMMAND  &kp RIGHT_CONTROL  &macro_pw2  &kp H             &kp J         &kp K           &kp L             &kp SEMICOLON      &kp APOSTROPHE
-&kp LEFT_SHIFT          &kp Z      &kp X         &kp C             &kp V             &kp B             &kp ESCAPE     &none             &kp ESCAPE        &kp PG_UP  &none              &kp PAGE_UP        &kp N              &kp M       &kp N             &kp M         &kp COMMA       &kp DOT           &kp SLASH          &kp RIGHT_SHIFT
+&kp TAB                 &kp Q      &kp W         &section_s 0 E    &kp R             &kp T             &kp F21                                                                                                                &kp F22     &kp Y             &kp U         &kp I           &kp O             &p_p 0 P           &kp BACKSLASH
+&kp ESC                 &kp A      &span_s 0 S   &div_d 0 D        &kp F             &kp G             &className     &kp LEFT_COMMAND  &kp LALT          &kp LGUI   &kp RIGHT_COMMAND  &kp RIGHT_COMMAND  &kp RIGHT_CONTROL  &macro_pw2  &kp H             &kp J         &kp K           &kp L             &kp SEMICOLON      &kp APOSTROPHE
+&kp LEFT_SHIFT          &kp Z      &kp X         &kp C             &kp V             &button_b 0 B     &kp ESCAPE     &none             &kp ESCAPE        &kp PG_UP  &none              &kp PAGE_UP        &kp N              &kp M       &kp N             &main_m 0 M   &kp COMMA       &kp DOT           &kp SLASH          &kp RIGHT_SHIFT
 &mo 2                   &kp GRAVE  &kp CAPSLOCK  &kp LEFT_ARROW    &kp RIGHT_ARROW                     &kp BACKSPACE  &kp LEFT_COMMAND  &kp LEFT_CONTROL                                &kp AT             &kp ENTER          &kp SPACE                     &kp UP_ARROW  &kp DOWN_ARROW  &kp LEFT_BRACKET  &kp RIGHT_BRACKET  &mo 2
             >;
         };
